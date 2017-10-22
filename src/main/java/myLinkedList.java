@@ -6,9 +6,7 @@ import java.util.List;
 import java.util.ListIterator;
 
 
-/**
- * Created by EgaMen on 07.10.2017.
- */
+
 public class myLinkedList<E> implements List {
      Knot<E> theFirst;
      Knot<E> theLast;
