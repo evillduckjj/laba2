@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="myLinkedListTest" time="0.107" tests="11" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="myLinkedListTest" time="0.092" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2017.2.5"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
     <property name="java.vm.version" value="25.121-b13"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\EgaMen\IdeaProjects\Laba21"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\EgaMen\IdeaProjects\Dima"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\EgaMen\IdeaProjects\Laba21"/>
+    <property name="user.dir" value="C:\Users\EgaMen\IdeaProjects\Dima"/>
     <property name="java.runtime.version" value="1.8.0_121-b13"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_121\jre\lib\endorsed"/>
@@ -61,15 +61,15 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase name="removeFirst_Default_True" classname="myLinkedListTest" time="0.043"/>
-  <testcase name="toArray_Default_True" classname="myLinkedListTest" time="0.006"/>
-  <testcase name="removeAll_NullSize_RuntimeException" classname="myLinkedListTest" time="0.003"/>
+  <testcase name="removeFirst_Default_True" classname="myLinkedListTest" time="0.018"/>
+  <testcase name="toArray_Default_True" classname="myLinkedListTest" time="0"/>
+  <testcase name="removeAll_NullSize_RuntimeException" classname="myLinkedListTest" time="0.006"/>
   <testcase name="myLinkedListCopyConstructor_Default_True" classname="myLinkedListTest" time="0"/>
   <testcase name="removeAll_Default_True" classname="myLinkedListTest" time="0"/>
-  <testcase name="addFirst_Default_True" classname="myLinkedListTest" time="0.001"/>
+  <testcase name="addFirst_Default_True" classname="myLinkedListTest" time="0"/>
   <testcase name="size_Default_True" classname="myLinkedListTest" time="0"/>
-  <testcase name="removeFirst_NullSize_RuntimeException" classname="myLinkedListTest" time="0.001"/>
-  <testcase name="remove_Default_True" classname="myLinkedListTest" time="0.001"/>
-  <testcase name="remove_WrongItem_Exception" classname="myLinkedListTest" time="0.001"/>
-  <testcase name="addLast_Default_True" classname="myLinkedListTest" time="0.001"/>
+  <testcase name="removeFirst_NullSize_RuntimeException" classname="myLinkedListTest" time="0"/>
+  <testcase name="remove_Default_True" classname="myLinkedListTest" time="0"/>
+  <testcase name="remove_WrongItem_Exception" classname="myLinkedListTest" time="0"/>
+  <testcase name="addLast_Default_True" classname="myLinkedListTest" time="0"/>
 </testsuite>
