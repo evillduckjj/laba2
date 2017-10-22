@@ -10,109 +10,111 @@ import java.util.ListIterator;
  * Created by EgaMen on 07.10.2017.
  */
 public class myLinkedList<E> implements List {
-     Node<E> first;
-     Node<E> last;
-    private int size=0;
+     Knot<E> theFirst;
+     Knot<E> theLast;
+    private int listSize =0;
 
     public myLinkedList(){
 
     }
 
     public myLinkedList(myLinkedList<E> list){
-        Object[]listArray=list.toArray();
+        Object[]listToObject=list.toArray();
         for(int x=0; x<list.size(); x++)
         {
-            addLast((E)listArray[x]);
+            addLast((E)listToObject[x]);
         }
 
     }
-    public void addFirst(E e) {
-        Node<E> f=first;
-        Node<E> newNode = new Node<>(first, e);
-        first = newNode;
-        if(f==null)
-            last = newNode;
-        size++;
-    }
-
     public void addLast(E e) {
-        Node<E> l=last;
-        Node<E> newNode = new Node<>(null, e);
-        last=newNode;
+        Knot<E> l= theLast;
+        Knot<E> newKnot = new Knot<>(null, e);
+        theLast = newKnot;
         if(l==null) {
-            first=newNode;
+            theFirst = newKnot;
         }
         else {
-            l.next=newNode;
+            l.next= newKnot;
         }
-        size++;
+        listSize++;
 
     }
-
     public void removeFirst() {
-        if(size==0)
+        if(listSize ==0)
             throw new RuntimeException();
-        Node<E> next = first.next;
-        first.item=null;
-        first.next=null;
+        Knot<E> next = theFirst.next;
+        theFirst.item=null;
+        theFirst.next=null;
         if(next ==null)
-            last=null;
-        first=next;
-        size--;
+            theLast =null;
+        theFirst =next;
+        listSize--;
     }
-    private void unlink(Node<E> x, Node<E> prev)
+    public void addFirst(E e) {
+        Knot<E> f= theFirst;
+        Knot<E> newKnot = new Knot<>(theFirst, e);
+        theFirst = newKnot;
+        if(f==null)
+            theLast = newKnot;
+        listSize++;
+    }
+
+
+
+
+    private void unlink(Knot<E> x, Knot<E> previous)
     {
-        if (prev == null)
-            first = x.next;
+        if (previous == null)
+            theFirst = x.next;
         else
-            prev.next = x.next;
+            previous.next = x.next;
         if (x.next == null)
-            last = prev;
+            theLast = previous;
         else
             x.next = null;
         x.item = null;
-        size--;
-        //prev = x;
+        listSize--;
+        //previous = x;
     }
     public void removeAll(){
-        if(size==0)
+        if(listSize ==0)
             throw new RuntimeException();
-        Node<E> x=first;
+        Knot<E> x= theFirst;
         while( x!=null)
         {
-            Node<E> elem = x;
+            Knot<E> elem = x;
             x=x.next;
             elem.item=null;
             elem.next=null;
-            size--;
+            listSize--;
         }
     }
 
-    @Override
+
     public int size() {
-        return this.size;
+        return this.listSize;
     }
 
-    @Override
+
     public boolean isEmpty() {
         return size()==0;
     }
 
-    @Override
+
     public boolean contains(Object o) {
         return false;
     }
 
-    @Override
+
     public Iterator iterator() {
         return null;
     }
 
-    @Override
+
     public Object[] toArray() {
-        Object[] myArray = new Object[size];
+        Object[] myArray = new Object[listSize];
         int y=0;
-        for(Node<E> x = first; x!=null; x=x.next)
+        for(Knot<E> x = theFirst; x!=null; x=x.next)
         {
             myArray[y]=x.item;
             y++;
@@ -120,26 +122,26 @@ public class myLinkedList<E> implements List {
         return myArray;
     }
 
-    @Override
+
     public boolean add(Object o) {
         return false;
     }
 
-    @Override
+
     public boolean remove(Object o) {
         if(o==null){
-            Node<E> prev= null;
-            for(Node<E> x = first; x!=null; x=x.next) {
+            Knot<E> previous= null;
+            for(Knot<E> x = theFirst; x!=null; x=x.next) {
                 if (x.item==null) {
-                    unlink(x,prev);
+                    unlink(x,previous);
                     return true;
                 }
             }
         }
         else
         {
-            Node<E> prev=null;
-            for(Node<E> x=first; x!=null; x=x.next) {
+            Knot<E> prev=null;
+            for(Knot<E> x = theFirst; x!=null; x=x.next) {
                 if(o.equals(x.item))
                 {
                     unlink(x,prev);
@@ -236,33 +238,33 @@ public class myLinkedList<E> implements List {
     @Override
     public String toString() {
         String result = "";
-        if (size>0) {
-            for (Node<E> x = first; x != null; x = x.next) {
+        if (listSize >0) {
+            for (Knot<E> x = theFirst; x != null; x = x.next) {
                 result += x.getItem().toString();
             }
         }
         return result;
     }
 
-    private static class Node<T> {
-        Node next;
+    private static class Knot<T> {
+        Knot next;
         T item;
 
-        Node(){
+        Knot(){
             this.next=null;
         }
 
-        Node(Node<T> next, T element){
+        Knot(Knot<T> next, T element){
             this.next=next;
             this.item = element;
 
         }
 
-        Node getNext() {
+        Knot getNext() {
             return next;
         }
 
-        void setNext(Node next) {
+        void setNext(Knot next) {
             this.next = next;
         }
 
